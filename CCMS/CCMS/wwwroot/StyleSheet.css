@@ -6,6 +6,13 @@ body {
     font-family: 'Lato';
 }
 
+.navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: +100;
+    background-color: whitesmoke;
+}
 .navbar-brand{
     font-family: 'Pacifico';
     font-size: 35px;
@@ -40,7 +47,7 @@ body {
 }
 
 .site-content {
-    background-image: url('https://live.staticflickr.com/5072/14061145991_e718a49480_b.jpg');
+    background-image: url('https://i.redd.it/9rsgn0eqv2dz.jpg');
     background-attachment: fixed;
     background-size: cover;
 }
@@ -58,11 +65,11 @@ body {
 
 .site-desc{
     font-size: 14px;
-    padding-left: 15%;
+    align-self:center;
 }
 
 .site-btn1{
-    margin-left: 40%;
+    margin-left: 45%;
     background-color: black;
     color: white;
 }
@@ -79,9 +86,13 @@ body {
 /* Section-1 */
 
 .section-1 {
-    margin-top: 8%;
-    margin-left: 3%;
+    margin-top: 5%;
 }
+
+.card{
+    width: 20rem;
+}
+
 
     .section-1 .heading-1 {
         margin-bottom: 5%;
@@ -109,20 +120,26 @@ body {
     background-image: url('http://www.thebluediamondgallery.com/wooden-tile/images/donation.jpg');
     background-size: cover;
     background-attachment: fixed;
+    width: 100%
 }
 
-.section-2 .heading-1{
+.section-2 .heading-1 {
     margin-top: 7%;
+    padding: 1%;
     margin-bottom: 4%;
     font-family: 'rightous';
-    color: whitesmoke;
+    color: black;
+    width: 200px;
+    border-radius: 5px;
 }
 
 .section-2 .para {
     width: 80%;
     font-family: 'Ubuntu';
-    color: whitesmoke;
+    color: rgba(0, 0, 0, 0.59);
     margin-bottom: 7%;
+    border-radius: 5px;
+    padding: 1%
 }
 
 .section-2 .btn {
@@ -141,12 +158,76 @@ body {
     color: #00E8E8;
 }
 
-.section-3 p {
-    color: rgba(0, 0, 0, 0.59);
-}
+    .section-3 p {
+        color: rgba(0, 0, 0, 0.59);
+        font-size: 18px;
+    }
 
 /* Section-4 */
 
 .section-4{
     margin-top: 8%
+}
+
+.section-4 .row .col-md-7, .col-md-5{
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+
+    .section-4 a{
+        font-size: 40px;
+    }
+
+    .commit {
+        margin-bottom: 5%;
+    }
+
+    .section-4 .para-1{
+        color: white;
+        font-family: 'Roboto Condensed';
+        margin-top: 5%;
+        font-size: 23px;
+    }
+
+@media screen and (max-width: 872px){
+    .section-1 .card{
+        width: 14rem;
+    }
+
+    .section-4 .col-md-7 img{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 414px){
+    .site-content .site-title{
+        font-size: 30px;
+        padding: 15%;
+    }
+
+    .site-content .site-btn2 {
+        display: none;
+    }
+
+    .site-content .site-btn1 {
+        margin-left: 15%;
+    }
+
+    .section-1 .heading-1, .section-1 .heading-2{
+        font-size: 25px;
+    }
+
+    .section-1 .col-md-4{
+        padding: 5%;
+        margin-left: 8%;
+    }
+
+    .section-1 .card{
+        width: 17rem;
+    }
+
+    section-4 .col-md-5{
+        padding: 0% 15%;
+    }
 }
