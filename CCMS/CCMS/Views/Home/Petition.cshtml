@@ -1,0 +1,84 @@
+﻿@model CCMS.Models.PetitionViewModel
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+@{
+    Layout = "_Layout";
+}
+
+<div class="container-fluid p-0">
+    <div class="site-content petition">
+        <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column">
+                <h1 class="site-title">Community Case Management System Build</h1>
+                <p class="site-desc">
+                    Using Technology to Bring Nonprofits Across Washington State Together as One Cohesive Team!
+                </p>
+
+                <div class="d-flex flex-row">
+                    <input type="button" value="Donate" class="btn site-btn1 px-4 py-3 mr-4 btn-dark" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-1">
+    <div class="container text-center">
+        <h1 class="heading-1">Sign the Petition</h1>
+        <p>Number of Signatures: @Model.SigCount</p>
+        <p>Number of Unique Orginizations: @Model.UniqueOrginizations</p>
+        <form asp-action="Sign" method="post">
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="">Name and Orginization</span>
+                </div>
+
+
+                <input asp-for="Name" class="form-control" placeholder="Name Required" />
+                <span asp-validation-for="Name"></span>
+
+                <input asp-for="Orginization" class="form-control" placeholder="Orginization Required" />
+                <span asp-validation-for="Orginization"></span>
+            </div>
+                <button type="submit" class="btn btn-outline-secondary">Sign</button>
+
+</form>
+        <table class="table table-striped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        Name:
+                        </th>
+                    <th scope="col">
+                        Orginization:
+                    </th>
+                    <th scope="col">
+                        Date Signed:
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model.Signatures)
+                {
+                <tr>
+                    <td>
+                        @s.Name
+                    </td>
+                    <td>
+                        @s.Orginization
+                    </td>
+                    <td>
+                        @s.Date
+                    </td>
+                </tr>
+                }
+                </tbody>
+        </table>
+    </div>
+</div>
+
+<footer>
+    <div class="section-5 text-center">
+        <h5>ccmsbuild.org &copy;</h5>
+    </div>
+</footer>
