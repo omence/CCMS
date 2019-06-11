@@ -4,17 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using CCMS.Data;
 using CCMS.Models;
+using CCMS.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CCMS.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IEmail _emailService;
+
         private readonly CCMSBuildDbContext _context;
 
-        public HomeController(CCMSBuildDbContext context)
+        public HomeController(CCMSBuildDbContext context, IEmail emailService)
         {
             _context = context;
+
+            _emailService = emailService;
 
         }
 
@@ -70,6 +75,14 @@ namespace CCMS.Controllers
             ModelState.AddModelError("Orginization", "Orginization is Required");
 
             return RedirectToAction("Petition");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendEmailAsync(string email, string subject, string message)
+        {
+            await _emailService.SendEmail(email, subject, message);
+
+            return RedirectToAction("Contact");
         }
     }
 }

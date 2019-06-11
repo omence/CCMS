@@ -246,14 +246,21 @@ th {
 
     .section-1 .col-md-4{
         padding: 5%;
-        margin-left: 8%;
+        margin-left: 5%;
     }
 
     .section-1 .card{
-        width: 17rem;
+        width: 20rem;
+        align-self:center;
     }
 
-    section-4 .col-md-5{
+    .section-3 {
+        width: 24rem;
+        align-self: center;
+    }
+
+    section-4 .col-md-5 {
         padding: 0% 15%;
+        align-self: center;
     }
 }
