@@ -38,6 +38,23 @@ namespace CCMS.Controllers
             return View();
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Contact(string email, string subject, string message)
+        {
+            if (email != null && subject != null && message != null)
+            {
+                await _emailService.SendEmail(email, subject, message);
+
+                ModelState.AddModelError("email", "Message Sent");
+
+                return View();
+            }
+
+            ModelState.AddModelError("email", "All Fields Must Be Completed");
+
+            return View();
+        }
+
         public IActionResult Petition()
         {
             PetitionViewModel petitionViewModel = new PetitionViewModel();
@@ -77,12 +94,5 @@ namespace CCMS.Controllers
             return RedirectToAction("Petition");
         }
 
-        [HttpPost]
-        public async Task<IActionResult> SendEmailAsync(string email, string subject, string message)
-        {
-            await _emailService.SendEmail(email, subject, message);
-
-            return RedirectToAction("Contact");
-        }
     }
 }

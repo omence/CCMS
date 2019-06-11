@@ -25,11 +25,13 @@
     <div class="container text-center">
         <h1 class="heading-1">Contact Us</h1>
 
-       <form asp-action="SendEmailAsync" method="post">
-           <input name="email" class="form-control" placeholder="Your Email Address"/>
-           <input name="subject" class="form-control" placeholder="Message Subject"/>
-           <textarea name="message" class="form-control" placeholder="Write Message Here"></textarea>
-           <button type="submit" class="btn btn-outline-secondary">Send Message</button>
-       </form>
+        @Html.ValidationSummary()
+
+            <form asp-action="Contact" method="post">
+                <input name="email" class="form-control" placeholder="Your Email Address" />
+                <input name="subject" class="form-control" placeholder="Message Subject" />
+                <textarea name="message" class="form-control" placeholder="Write Message Here"></textarea>
+                <button type="submit" class="btn btn-outline-secondary">Send Message</button>
+            </form>
     </div>
 </div>
