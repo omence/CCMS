@@ -25,13 +25,23 @@
     <div class="container text-center">
         <h1 class="heading-1">Contact Us</h1>
 
-        @Html.ValidationSummary()
+        <p style="color:red;">
+            @Html.ValidationSummary()
+        </p>
 
-            <form asp-action="Contact" method="post">
-                <input name="email" class="form-control" placeholder="Your Email Address" />
-                <input name="subject" class="form-control" placeholder="Message Subject" />
-                <textarea name="message" class="form-control" placeholder="Write Message Here"></textarea>
-                <button type="submit" class="btn btn-outline-secondary">Send Message</button>
-            </form>
+        <form asp-action="Contact" method="post">
+
+                <input name="email" class="form-control mb-2" placeholder="Your Email Address" />
+                <input name="subject" class="form-control mb-2" placeholder="Message Subject" />
+                <textarea type="text" name="message" class="form-control" placeholder="Write Message Here"></textarea>
+                <button type="submit" class="btn btn-outline-secondary mt-3">Send Message</button>
+            
+        </form>
     </div>
 </div>
+<hr />
+<footer>
+    <div class="section-5 text-center">
+        <h5>ccmsbuild.org &copy;</h5>
+    </div>
+</footer>

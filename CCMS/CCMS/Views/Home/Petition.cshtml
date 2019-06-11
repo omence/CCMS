@@ -24,31 +24,34 @@
 <div class="section-1">
     <div class="container text-center">
         <h1 class="heading-1">Sign the Petition</h1>
-        <p>Number of Signatures: @Model.SigCount</p>
-        <p>Number of Unique Orginizations: @Model.UniqueOrginizations</p>
-        <form asp-action="Sign" method="post">
+        <h3>Number of Signatures: @Model.SigCount</h3>
+        <h3 class="mb-5">Number of Unique Orginizations: @Model.UniqueOrginizations</h3>
+
+        <h2 style="color:lightgreen;">
+            @Html.ValidationSummary()
+        </h2>
+
+        <form asp-action="Petition" method="post">
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="">Name and Orginization</span>
+                    <span class="input-group-text" id="">Full Name and Orginization</span>
                 </div>
 
 
-                <input asp-for="Name" class="form-control" placeholder="Name Required" />
-                <span asp-validation-for="Name"></span>
+                <input asp-for="Name" class="form-control" placeholder="Full Name Required" />
 
                 <input asp-for="Orginization" class="form-control" placeholder="Orginization Required" />
-                <span asp-validation-for="Orginization"></span>
             </div>
-                <button type="submit" class="btn btn-outline-secondary">Sign</button>
+            <button type="submit" class="btn btn-outline-secondary">Sign</button>
 
-</form>
+        </form>
         <table class="table table-striped mt-5">
             <thead>
                 <tr>
                     <th scope="col">
                         Name:
-                        </th>
+                    </th>
                     <th scope="col">
                         Orginization:
                     </th>
@@ -60,23 +63,23 @@
             <tbody>
                 @foreach (var s in Model.Signatures)
                 {
-                <tr>
-                    <td>
-                        @s.Name
-                    </td>
-                    <td>
-                        @s.Orginization
-                    </td>
-                    <td>
-                        @s.Date
-                    </td>
-                </tr>
+                    <tr>
+                        <td>
+                            @s.Name
+                        </td>
+                        <td>
+                            @s.Orginization
+                        </td>
+                        <td>
+                            @s.Date
+                        </td>
+                    </tr>
                 }
-                </tbody>
+            </tbody>
         </table>
     </div>
 </div>
-
+<hr />
 <footer>
     <div class="section-5 text-center">
         <h5>ccmsbuild.org &copy;</h5>

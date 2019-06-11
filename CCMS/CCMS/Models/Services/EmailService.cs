@@ -35,7 +35,7 @@ namespace CCMS.Models.Services
                 {
                     emailMessage.To.Add(new MailAddress(_configuration["Email:Email"]));
                     emailMessage.From = new MailAddress(_configuration["Email:Email"]);
-                    emailMessage.Subject = subject;
+                    emailMessage.Subject = $"From CCMS Build User {subject}";
                     emailMessage.Body = $"{email} {message}";
                     client.Send(emailMessage);
                 }
