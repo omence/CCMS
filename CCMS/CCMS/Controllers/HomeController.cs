@@ -73,29 +73,47 @@ namespace CCMS.Controllers
         {
             if (Name != null && Orginization != null)
             {
-                Petition petition = new Petition();
+                var checkForDuplicates = _context.Petition.FirstOrDefault(n => n.Name == Name && n.Orginization == Orginization);
 
-                petition.Name = Name;
+                if (checkForDuplicates == null)
+                {
+                    Petition petition = new Petition();
 
-                petition.Orginization = Orginization;
+                    petition.Name = Name;
 
-                petition.Date = DateTime.Now;
+                    petition.Orginization = Orginization;
 
-                _context.Petition.Add(petition);
+                    petition.Date = DateTime.Now;
 
-                _context.SaveChanges();
+                    _context.Petition.Add(petition);
 
-                PetitionViewModel petitionViewModel1 = new PetitionViewModel();
+                    _context.SaveChanges();
 
-                petitionViewModel1.Signatures = _context.Petition.OrderByDescending(x => x.Date).ToList();
+                    PetitionViewModel petitionViewModel1 = new PetitionViewModel();
 
-                petitionViewModel1.SigCount = _context.Petition.Count();
+                    petitionViewModel1.Signatures = _context.Petition.OrderByDescending(x => x.Date).ToList();
 
-                petitionViewModel1.UniqueOrginizations = _context.Petition.GroupBy(g => g.Orginization).Count();
+                    petitionViewModel1.SigCount = _context.Petition.Count();
 
-                ModelState.AddModelError("Name", "Thank You!");
+                    petitionViewModel1.UniqueOrginizations = _context.Petition.GroupBy(g => g.Orginization).Count();
 
-                return View(petitionViewModel1);
+                    ModelState.AddModelError("Name", "Thank You!");
+
+                    return View(petitionViewModel1);
+                }
+
+                PetitionViewModel petitionViewModel2 = new PetitionViewModel();
+
+                petitionViewModel2.Signatures = _context.Petition.OrderByDescending(x => x.Date).ToList();
+
+                petitionViewModel2.SigCount = _context.Petition.Count();
+
+                petitionViewModel2.UniqueOrginizations = _context.Petition.GroupBy(g => g.Orginization).Count();
+
+                ModelState.AddModelError("Name", "Sorry You Can Only Sign Once");
+
+                return View(petitionViewModel2);
+
             }
 
             PetitionViewModel petitionViewModel = new PetitionViewModel();
