@@ -52,6 +52,28 @@ body {
     background-size: cover;
 }
 
+.petition {
+    background-image: url('https://live.staticflickr.com/1115/4594723352_bacef86f40_b.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%
+}
+
+.contact {
+    background-image: url('https://media2.trover.com/T/58a27357761f9f5c9b035a98/fixedw_large_4x.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%
+}
+
+.prog {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c3/Everett_Station_-_Everett_skyline%2C_2014.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%
+}
+
+
 .site-title, .site-desc{
     color: white;
     font-family: 'Rightous';
@@ -97,7 +119,7 @@ body {
     .section-1 .heading-1 {
         margin-bottom: 5%;
         font-size: 39px;
-        margin-left: 3%;
+
     }
 
 .section-1 .para-1{
@@ -190,6 +212,10 @@ body {
         font-size: 23px;
     }
 
+th {
+    color: lightcoral !important;
+    font-size: 23px;
+}
 @media screen and (max-width: 872px){
     .section-1 .card{
         width: 14rem;
