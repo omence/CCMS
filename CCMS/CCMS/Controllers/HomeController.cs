@@ -68,7 +68,8 @@ namespace CCMS.Controllers
             return View(petitionViewModel);
         }
 
-        public IActionResult Sign(string Name, string Orginization)
+        [HttpPost]
+        public IActionResult Petition(string Name, string Orginization)
         {
             if (Name != null && Orginization != null)
             {
@@ -84,14 +85,30 @@ namespace CCMS.Controllers
 
                 _context.SaveChanges();
 
-                return RedirectToAction("Petition");
+                PetitionViewModel petitionViewModel1 = new PetitionViewModel();
+
+                petitionViewModel1.Signatures = _context.Petition.OrderByDescending(x => x.Date).ToList();
+
+                petitionViewModel1.SigCount = _context.Petition.Count();
+
+                petitionViewModel1.UniqueOrginizations = _context.Petition.GroupBy(g => g.Orginization).Count();
+
+                ModelState.AddModelError("Name", "Thank You!");
+
+                return View(petitionViewModel1);
             }
 
-            ModelState.AddModelError("Name", "Name is Required");
+            PetitionViewModel petitionViewModel = new PetitionViewModel();
 
-            ModelState.AddModelError("Orginization", "Orginization is Required");
+            petitionViewModel.Signatures = _context.Petition.OrderByDescending(x => x.Date).ToList();
 
-            return RedirectToAction("Petition");
+            petitionViewModel.SigCount = _context.Petition.Count();
+
+            petitionViewModel.UniqueOrginizations = _context.Petition.GroupBy(g => g.Orginization).Count();
+
+            ModelState.AddModelError("Name", "All Fields Must Be Completed");
+
+            return View(petitionViewModel);
         }
 
     }
