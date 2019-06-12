@@ -21,6 +21,7 @@ namespace CCMS
         public Startup(IConfiguration configuration)
         {
             var builder = new ConfigurationBuilder().AddEnvironmentVariables();
+            builder.AddUserSecrets<Startup>();
             Configuration = configuration;
         }
         // This method gets called by the runtime. Use this method to add services to the container.
