@@ -7,6 +7,7 @@ using CCMS.Models;
 using CCMS.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace CCMS.Controllers
 {
     public class HomeController : Controller
@@ -45,7 +46,7 @@ namespace CCMS.Controllers
             {
                 await _emailService.SendEmail(email, subject, message);
 
-                ModelState.AddModelError("email", "Message Sent");
+                TempData["Message"] = "Sent, we will get back to you ASAP";
 
                 return View();
             }
@@ -97,7 +98,7 @@ namespace CCMS.Controllers
 
                     petitionViewModel1.UniqueOrginizations = _context.Petition.GroupBy(g => g.Orginization).Count();
 
-                    ModelState.AddModelError("Name", "Thank You!");
+                    TempData["Success"] = "Thanks for the Support!";
 
                     return View(petitionViewModel1);
                 }
@@ -129,5 +130,9 @@ namespace CCMS.Controllers
             return View(petitionViewModel);
         }
 
+        public IActionResult Donation()
+        {
+            return View();
+        }
     }
 }
