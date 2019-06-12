@@ -1,5 +1,4 @@
 ﻿@model CCMS.Models.PetitionViewModel
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 @{
     Layout = "_Layout";
 }
@@ -9,13 +8,18 @@
         <div class="d-flex justify-content-center">
             <div class="d-flex flex-column">
                 <h1 class="site-title">Community Case Management System Build</h1>
-                <p class="site-desc">
+                <h2 class="site-desc">
                     Using Technology to Bring Nonprofits Across Washington State Together as One Cohesive Team!
-                </p>
-
-                <div class="d-flex flex-row">
-                    <input type="button" value="Donate" class="btn site-btn1 px-4 py-3 mr-4 btn-dark" />
-                </div>
+                </h2>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
             </div>
         </div>
     </div>
@@ -31,57 +35,76 @@
             @Html.ValidationSummary()
         </h2>
 
-        <form asp-action="Petition" method="post">
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="">Full Name and Orginization</span>
-                </div>
-
-
-                <input asp-for="Name" class="form-control" placeholder="Full Name Required" />
-
-                <input asp-for="Orginization" class="form-control" placeholder="Orginization Required" />
+        @if (TempData["Success"] != null)
+        {
+            <div class="green">
+                <h2 style="color:lightgreen;"><strong>Success:</strong> @TempData["Success"].ToString()</h2>
             </div>
-            <button type="submit" class="btn btn-outline-secondary">Sign</button>
+        }
+        <div class="container text-center">
+            <div class="card-deck col">
 
-        </form>
-        <table class="table table-striped mt-5">
-            <thead>
-                <tr>
-                    <th scope="col">
-                        Name:
-                    </th>
-                    <th scope="col">
-                        Orginization:
-                    </th>
-                    <th scope="col">
-                        Date Signed:
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var s in Model.Signatures)
-                {
-                    <tr>
-                        <td>
-                            @s.Name
-                        </td>
-                        <td>
-                            @s.Orginization
-                        </td>
-                        <td>
-                            @s.Date
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+                <div class="card text-center mr-5 mb-5" style="width: 18rem;">
+
+                    <div class="card-body text-center">
+                        <form asp-action="Petition" method="post" class="mt-5">
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="">Show Support</span>
+                                </div>
+
+
+                                <input asp-for="Name" class="form-control" placeholder="* Full Name" required />
+
+                                <input asp-for="Orginization" class="form-control" placeholder="* Orginization" required />
+                            </div>
+                            <button type="submit" class="btn btn-outline-secondary">Sign</button>
+
+                        </form>
+                        <table class="table table-striped mt-5">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        Name:
+                                    </th>
+                                    <th scope="col">
+                                        Orginization:
+                                    </th>
+                                    <th scope="col">
+                                        Date Signed:
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var s in Model.Signatures)
+                                {
+                                    <tr>
+                                        <td>
+                                            @s.Name
+                                        </td>
+                                        <td>
+                                            @s.Orginization
+                                        </td>
+                                        <td>
+                                            @s.Date
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<hr />
-<footer>
+
+<footer class="bg-dark">
+    <br />
+    <a asp-action="Contact" class="nav-link mt-3"><p style="color:white;">Contact </p></a>
     <div class="section-5 text-center">
-        <h5>ccmsbuild.org &copy;</h5>
+        <h5 style="color:white;">ccmsbuild.org &copy;</h5>
     </div>
+    <br />
 </footer>

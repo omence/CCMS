@@ -4,6 +4,12 @@ body {
     padding: 0%;
     margin: 0%;
     font-family: 'Lato';
+    text-align:center;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
 }
 
 .navbar {
@@ -13,7 +19,8 @@ body {
     z-index: +100;
     background-color: whitesmoke;
 }
-.navbar-brand{
+
+.navbar-brand {
     font-family: 'Pacifico';
     font-size: 35px;
     color: lightcoral !important;
@@ -26,9 +33,9 @@ body {
     font-family: 'Roboto Condensed';
 }
 
-.nav-link:hover{
-    color: #00E8E8 !important;
-}
+    .nav-link:hover {
+        color: #00E8E8 !important;
+    }
 .active {
     font-style: italic;
     font-weight: bold;
@@ -52,27 +59,6 @@ body {
     background-size: cover;
 }
 
-.petition {
-    background-image: url('https://live.staticflickr.com/1115/4594723352_bacef86f40_b.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%
-}
-
-.contact {
-    background-image: url('https://media2.trover.com/T/58a27357761f9f5c9b035a98/fixedw_large_4x.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%
-}
-
-.prog {
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c3/Everett_Station_-_Everett_skyline%2C_2014.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-    width: 100%
-}
-
 
 .site-title, .site-desc{
     color: white;
@@ -91,13 +77,8 @@ body {
 }
 
 .site-btn1{
-    margin-left: 45%;
     background-color: black;
     color: white;
-}
-
-.site-btn2 {
-    background-color: white;
 }
 
 .site-btn1, .site-btn2{
@@ -116,11 +97,10 @@ body {
 }
 
 
-    .section-1 .heading-1 {
-        margin-bottom: 5%;
-        font-size: 39px;
-
-    }
+.section-1 .heading-1 {
+    margin-bottom: 5%;
+    font-size: 39px;
+}
 
 .section-1 .para-1{
     width: 60%;
@@ -150,24 +130,27 @@ body {
     padding: 1%;
     margin-bottom: 4%;
     font-family: 'rightous';
-    color: black;
+    color: white;
     width: 200px;
     border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .section-2 .para {
     width: 80%;
     font-family: 'Ubuntu';
-    color: rgba(0, 0, 0, 0.59);
+    color: white;
     margin-bottom: 7%;
     border-radius: 5px;
-    padding: 1%
+    padding: 1%;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .section-2 .btn {
     margin-bottom: 2%;
     width: 30%;
     padding: 2% 5%;
+    float:left;
 }
 
 /* Section-3 */
@@ -180,10 +163,10 @@ body {
     color: #00E8E8;
 }
 
-    .section-3 p {
-        color: rgba(0, 0, 0, 0.59);
-        font-size: 18px;
-    }
+.section-3 p {
+    color: rgba(0, 0, 0, 0.59);
+    font-size: 18px;
+}
 
 /* Section-4 */
 
@@ -197,39 +180,63 @@ body {
 
 }
 
-    .section-4 a{
-        font-size: 40px;
-    }
+.section-4 a{
+    font-size: 40px;
+}
 
-    .commit {
-        margin-bottom: 5%;
-    }
+.commit {
+    margin-bottom: 5%;
+}
 
-    .section-4 .para-1{
-        color: white;
-        font-family: 'Roboto Condensed';
-        margin-top: 5%;
-        font-size: 23px;
-    }
+.section-4 .para-1{
+    color: white;
+    font-family: 'Roboto Condensed';
+    margin-top: 5%;
+    font-size: 23px;
+}
 
 th {
     color: lightcoral !important;
     font-size: 23px;
 }
-@media screen and (max-width: 872px){
-    .section-1 .card{
+
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media screen and (max-width: 872px) {
+    .section-1 .card {
         width: 14rem;
     }
 
-    .section-4 .col-md-7 img{
+    .section-4 .col-md-7 img {
         width: 350px;
+    }
+
+    .section-2 .container-fluid {
+        background-image: url('https://i.redd.it/qs9oedce5ue21.jpg');
     }
 }
 
-@media screen and (max-width: 414px){
-    .site-content .site-title{
+@media screen and (max-width: 414px) {
+    .site-content .site-title {
         font-size: 30px;
         padding: 15%;
+    }
+
+    .section-2 .container-fluid {
+        background-image: url('https://i.redd.it/qs9oedce5ue21.jpg');
     }
 
     .site-content .site-btn2 {
@@ -240,18 +247,18 @@ th {
         margin-left: 15%;
     }
 
-    .section-1 .heading-1, .section-1 .heading-2{
+    .section-1 .heading-1, .section-1 .heading-2 {
         font-size: 25px;
     }
 
-    .section-1 .col-md-4{
+    .section-1 .col-md-4 {
         padding: 5%;
         margin-left: 5%;
     }
 
-    .section-1 .card{
+    .section-1 .card {
         width: 20rem;
-        align-self:center;
+        align-self: center;
     }
 
     .section-3 {
@@ -264,3 +271,7 @@ th {
         align-self: center;
     }
 }
+
+
+
+

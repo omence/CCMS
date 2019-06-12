@@ -1,23 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
     Layout = "_Layout";
 }
 
-<main>
+<main class="mb-10">
     <div class="container-fluid p-0">
         <div class="site-content">
             <div class="d-flex justify-content-center">
                 <div class="d-flex flex-column">
                     <h1 class="site-title">Community Case Management System Build</h1>
-                    <p class="site-desc">
+                    <h2 class="site-desc">
                         Using Technology to Bring Nonprofits Across Washington State Together as One Cohesive Team!
-                    </p>
-
-                    <div class="d-flex flex-row">
-                        <input type="button" value="Donate" class="btn site-btn1 px-4 py-3 mr-4 btn-dark" />
-                    </div>
+                    </h2>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
@@ -81,12 +84,13 @@
         <div class="container-fluid">
             <div class="d-flex justify-content-end">
                 <div class="d-flex flex-column m-4">
-                    <h1 class="heading-1 bg-light">Contribute</h1>
-                    <p class="para bg-light">
+                    <h1 class="heading-1">Contribute</h1>
+                    <p class="para">
                         Our goal is to have the application at least 50% crowd funded.  We are a 501(C)(3) organization so all donations are tax deductible.  We will be relying on monthly contributions to fund the build.  I have very little overhead; I will be building the application from my home, so I only need enough funding to cover living expenses.  Similar applications would cost hundreds of thousands to millions of dollars to build.  We are willing to do it for a little more that minimum wage.  The best way to support the build is by signing up to make a monthly contribution.  Another way to help is to sign the petition linked at the top of the page, this way we can demonstrate that the community is behind the build and agrees that it is needed. I am passionate about building the Community Case Management System, I know it is necessary, please support the mission.
                     </p>
-
-                    <input type="button" value="Contribute" class="btn btn-danger"/>
+                    <form asp-action="Donation">
+                        <button type="submit" class="btn btn-danger">Contribute</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -131,34 +135,17 @@
                     </div>
                 </div>
             </div>
-            </div>
         </div>
     </div>
 
-    <div class="section-4 bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <img class="btmimg"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHuFbekXOl_ZNvG7Fj5r0EM87geLVfgFeq8SlOgWxPAKs4oKel" width="100%" />
-                </div>
-                <div class="col-md-5">
-                    <h1 class="text-white">One Step at a Time</h1>
-                    <a href="#">Become a Change Agent</a>
-                    <p class="para-1">
-                        "Teamwork is the ability to work together toward a common vision. The ability to direct individual accomplishments toward organizational objectives. It is the fuel that allows common people to attain uncommon results." --Andrew Carnegie
-                        <br />
-                        <br />
-                        "If you're climbing the ladder of life, you go rung by rung, one step at a time. Don't look too far up, set your goals high but take one step at a time. Sometimes you don't think you're progressing until you step back and see how high you've really gone." --Donny Osmond
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 </main>
-
-<footer>
-   <div class="section-5 text-center">
-       <h5>ccmsbuild.org &copy;</h5>
-   </div>
+<br />
+<br />
+<footer class="bg-dark">
+    <br />
+<a asp-action="Contact" class="nav-link mt-3"><p style="color:white;">Contact </p></a>
+    <div class="section-5 text-center">
+        <h5 style="color:white;">ccmsbuild.org &copy;</h5>
+    </div>
+    <br />
 </footer>

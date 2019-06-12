@@ -27,7 +27,7 @@
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "nav-item active" : "nav-item")"><a asp-action="Contact" class="nav-link">Contact</a></li>
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Petition" ? "nav-item active" : "nav-item")"><a asp-action="Petition" class="nav-link">Petition</a></li>
                 </ul>
-              <form class="form-inline my-2 my-lg-0">
+              <form asp-action="Donation" class="form-inline my-2 my-lg-0">
                   <button class="btn menu-right-btn border" type="submit">
                       Donate
                   </button>
