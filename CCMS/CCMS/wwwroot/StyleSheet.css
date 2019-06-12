@@ -220,6 +220,9 @@ th {
         width: 14rem;
     }
 
+    .card-body {
+        align-self:center;
+    }
     .section-4 .col-md-7 img {
         width: 350px;
     }
