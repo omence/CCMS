@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCMS", "CCMS\CCMS.csproj", "{24A30A27-3218-4156-8DA7-2D01247C8D57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CCMS", "CCMS\CCMS.csproj", "{24A30A27-3218-4156-8DA7-2D01247C8D57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{ED5C7920-A39F-4E24-AFA1-3A3321671E6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{24A30A27-3218-4156-8DA7-2D01247C8D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24A30A27-3218-4156-8DA7-2D01247C8D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24A30A27-3218-4156-8DA7-2D01247C8D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED5C7920-A39F-4E24-AFA1-3A3321671E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED5C7920-A39F-4E24-AFA1-3A3321671E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED5C7920-A39F-4E24-AFA1-3A3321671E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED5C7920-A39F-4E24-AFA1-3A3321671E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
