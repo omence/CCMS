@@ -24,21 +24,40 @@ namespace CCMS.Controllers
 
         }
 
+        /// <summary>
+        /// sends Home page
+        /// </summary>
+        /// <returns>view</returns>
         public IActionResult Index()
         {
             return View();
         }
 
+        /// <summary>
+        /// sends progress vlog view
+        /// </summary>
+        /// <returns>view</returns>
         public IActionResult Progress()
         {
             return View();
         }
 
+        /// <summary>
+        /// sends contact view
+        /// </summary>
+        /// <returns>view</returns>
         public IActionResult Contact()
         {
             return View();
         }
 
+        /// <summary>
+        /// Emails users message to admin
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="subject"></param>
+        /// <param name="message"></param>
+        /// <returns>Email</returns>
         [HttpPost]
         public async Task<IActionResult> Contact(string email, string subject, string message)
         {
@@ -56,6 +75,10 @@ namespace CCMS.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Sends all petition signatures and counts to view
+        /// </summary>
+        /// <returns>view with object</returns>
         public IActionResult Petition()
         {
             PetitionViewModel petitionViewModel = new PetitionViewModel();
@@ -69,6 +92,12 @@ namespace CCMS.Controllers
             return View(petitionViewModel);
         }
 
+        /// <summary>
+        /// Creates a new signature for petition
+        /// </summary>
+        /// <param name="Name"></param>
+        /// <param name="Orginization"></param>
+        /// <returns>View with object</returns>
         [HttpPost]
         public IActionResult Petition(string Name, string Orginization)
         {
@@ -130,6 +159,10 @@ namespace CCMS.Controllers
             return View(petitionViewModel);
         }
 
+        /// <summary>
+        /// sends donation view
+        /// </summary>
+        /// <returns>view</returns>
         public IActionResult Donation()
         {
             return View();
